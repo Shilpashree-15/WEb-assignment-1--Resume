@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Shilpashree R G</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">My Bio-data</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="contact-section">
+      <h1>Contact</h1>
+      <p>If you'd like to reach me, email: <strong>example@mail.com</strong> or use the form below.</p>
+
+      <form id="contactForm" class="form-card">
+        <label>Name
+          <input type="text" name="name" id="name" required>
+        </label>
+
+        <label>Email
+          <input type="email" name="email" id="email" required>
+        </label>
+
+        <label>Message
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="contactStatus" class="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025</p>
+  </footer>
+
+  <script>
+    // jQuery simple handler to show a fake "sent" message (since no backend here)
+    $('#contactForm').on('submit', function(e){
+      e.preventDefault();
+      $('#contactStatus').text('Message sent (demo) — thank you!').css('color','#0a0');
+      $(this).trigger('reset');
+    });
+  </script>
+</body>
+</html>
